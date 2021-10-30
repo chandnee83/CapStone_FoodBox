@@ -1,0 +1,22 @@
+1 -> Create EC2 AWS instance -> t2.small 
+
+    we would use this instance to run the application as well as run Jenkins here
+
+2 -> Once the instance is up and running we would download jenkins into instance and run Jenkins on port 9090
+
+        sudo wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/redhat-stable/jenkins.repo
+            3  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+            5  sudo yum install jenkins java-1.8.0-openjdk-devel -y
+            7  sudo yum install jenkins java-1.8.0-openjdk-devel -y
+            9  sudo systemctl start jenkins
+
+3 -> We would also need mysql to be installed in the instance used by the application            
+
+4 -> Create user in Jenkins and add maven Plugin to Jenkins Host.
+
+5 -> Create pipeline with Maven Project and add github repository url which maven plugin will use to build the project.
+
+6 -> use the script run.sh as post steps of jenkins build which would help deploy the application.
+
+
+    
